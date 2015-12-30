@@ -1,0 +1,17 @@
+[Mon, 14 Dec 2015 17:05:05 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 14 Dec 2015 17:05:05 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Mon, 14 Dec 2015 17:05:26 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 200
+[Mon, 14 Dec 2015 17:05:56 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/fauxton/ 404
+[Mon, 14 Dec 2015 17:06:10 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 200
+[Mon, 14 Dec 2015 17:06:11 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/css/index-6688cd4426ead40b085270f8cb007530.css 200
+[Mon, 14 Dec 2015 17:06:13 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/require-34a7e370ea98389d118cc328682c0939.js 200
+[Mon, 14 Dec 2015 17:06:17 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Mon, 14 Dec 2015 17:06:17 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 304
+[Mon, 14 Dec 2015 17:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Mon, 14 Dec 2015 17:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/img/pouchdb-site.png 200
+[Mon, 14 Dec 2015 17:06:18 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/fonts/fontawesome-webfont.woff?v=3.2.1 200
+[Mon, 14 Dec 2015 17:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/fonts/fauxtonicon.woff 200
+[Mon, 14 Dec 2015 17:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1450112774640 200
+[Mon, 14 Dec 2015 17:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator 200
+[Mon, 14 Dec 2015 17:06:19 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users 200
+[Mon, 14 Dec 2015 17:06:26 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/zeroclipboard/ZeroClipboard.swf?noCache=1450112777877 200

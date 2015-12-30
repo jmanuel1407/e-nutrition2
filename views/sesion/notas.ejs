@@ -1,0 +1,39 @@
+<div class="container">
+	<h1>Notas</h1>
+    <div id="unsupported-message" class="alert alert-warning" style="display:none;">
+            <b>Aww snap!</b> Tu navegador no soporta indexedDB.
+    </div>
+
+    <div id="ui-container" class="row">
+    	<div class="col-sm-3">
+    		<a href="#" id="delete-all-btn" class="btn-xs"><i class="fa fa-trash-o"></i> Borrar todo</a>
+            <hr/>
+            <ul id="list-container" class="list-unstyled"></ul>       
+        </div>
+
+        <div class="col-sm-8 push-down">
+        	<input type="hidden" id="id-hidden" />
+        	<input id="title-text" type="text" class="form-control" tabindex="1" placeholder="titulo" autofocus /><br />
+                
+            <textarea id="notes-text" class="form-control" tabindex="2" placeholder="texto"></textarea>
+                
+            <div class="pull-right push-down">
+            	<a href="#" id="clear-button" tabindex="4">Borrar</a>
+            	<button id="save-button" tabindex="3" class="btn btn-default btn-primary"> 
+            		<i class="fa fa-save"></i> Guardar 
+            	</button>
+            </div>
+        </div>
+    </div>
+   
+    <script id="note-template" type="text/template">
+    	<li>
+            <i data-id="{ID}" class="fa fa-minus-circle"></i>
+            <a href="#" data-id="{ID}">{TITLE}</a>
+        </li>
+    </script>
+    <script id="empty-note" type="text/template">
+    	<li class="text-muted small">Sin Notas</li>
+    </script>
+
+</div>

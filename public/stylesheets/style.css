@@ -1,0 +1,726 @@
+* {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.encabezado{
+	display: none;
+}
+
+.categorias{
+	background-color: #108e32;
+	height:50px;
+	position: fixed;
+	top:0;
+	width: 100%;
+	z-index: 5;
+}
+
+#check-nav{
+	display: none;
+}
+
+.menu-icono{
+	color: #fff;
+	float: right;
+	font-size: 2.5rem;
+	opacity: 0.8;
+	text-align: center;
+	width: 20vw;
+}
+
+#check-nav:checked ~ .menu-icono{
+	opacity: 1; 
+}
+
+.menu{
+	height: 0;
+	margin-top: 50px;
+	opacity: 0.95;
+	overflow: hidden;
+}
+
+#check-nav:checked ~ .menu{
+	height: auto; 
+}
+/*.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: left;
+  background-color: grey;
+  left: 5px;
+  top: 5px;
+  height: 26px;
+  color: white;
+  border-color: black;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  -moz-box-shadow: 2px 2px 1px black;
+  padding: 2px 4px;
+  border: solid 1px black;
+}
+
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  background-color:white;
+  color:black;
+  -moz-box-shadow: 2px 2px 1px black;
+} */
+
+
+.menu ul li{
+	background-color: #01182C;
+	border-bottom: 1.5px groove #fff;
+	display: block;
+	height: 40px;
+	list-style: none;
+	text-align: center;
+	width: 100vw;
+	z-index: 5;
+}
+
+.menu ul li a,.login a{
+	display: block;
+	color: #fff;
+	font-size: 1.4rem;
+	padding-top: 2%;
+	text-decoration: none;
+	height: 100%;
+	width: 100%;  
+}
+
+.menu ul li a:visited, .menu ul .login a:visited{
+	color:#fff;
+}
+
+.menu ul li a:active,.menu ul .login a:active{
+	color:#12869f;
+}
+
+.menu ul .login{ 
+	background-color: #000d18;
+	border-bottom: 0;
+	float: left;
+	height: 40px;
+	width: 50%;	
+}
+
+.menu ul .login:last-child{
+	border-left: 1.5px groove #fff;
+}
+
+.main{
+	height: 90vh;
+	margin-top: 50px;
+	width: 100vw;
+	text-align: center;
+    padding: 1%;
+}
+
+.main .logo{
+	height: 60%;
+	margin: 7%;
+	width: 80%;
+}
+
+.main .logo img{
+	height: 100%;
+	width: 100%;
+}
+
+.main .titulo-section{
+	color:#0c7b9b;
+	font-family: sans-serif;
+	font-size: 2.2rem;
+	text-align: center;
+	text-decoration: underline;
+	width: 100%;
+}
+
+.main .descripcion{
+	display: none;
+}
+                            
+.main #contenedor-frutas,.main #contenedor-verduras,.main #contenedor-plantas,.main #contenedor-cereales {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.main .frutas, .verduras, .plantas,.cereales{
+	height: 30vh;
+	text-align: center;
+	width:47vw;
+    margin: 1vw;
+    margin-bottom: 1vh;
+    overflow: hidden;
+}
+
+.main .frutas a,.verduras a,.plantas a,.cereales a{
+	display: block;
+	text-decoration: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%; 
+}
+.frutas figure,.verduras figure,.plantas figure,.cereales figure{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.main .frutas a figcaption,.verduras a figcaption,.plantas a figcaption,.cereales a figcaption{
+	background-color: #179f12;
+	border-radius: 4px;
+	color: #fff;
+    height: 16%;
+	width: 100%;
+    font-weight: bold;
+    vertical-align: middle;
+     line-height: 30px;
+   
+}
+
+.main .frutas a:hover figcaption,.verduras a:hover figcaption,.plantas a:hover figcaption,.cereales a:hover figcaption{
+	background-color: #0c7b9b;		
+}
+
+.main .frutas img,.verduras img,.plantas img,.cereales img{
+	overflow: hidden;
+    height: 80%;
+	width: 90%;
+}
+
+
+.main #formulario,#formulario-ingresar{
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+.main #formulario div,.main #formulario-ingresar div{
+	height: 40px;
+	margin-top:1%;
+	width: 100%;
+}
+
+.main #formulario label,#formulario-ingresar label{
+	font-size: 1rem;
+	float: left;
+	padding: 1% 0 0 2%;
+	width: 25%;
+}
+
+.main #formulario input,#formulario-ingresar input{
+	height: 35px;
+	width: 65%;
+}
+
+.main #formulario .btn,.main #formulario-ingresar .btn{
+	background-color:#0c7b9b;
+	border: 2px groove #fff;
+	color: #fff;
+	height: 10vh;
+	margin-top: 2%;
+	width: 50%;
+}
+
+.main #formulario input[type="radio"]{
+    display: none;
+}
+
+.main #formulario .radios{
+	overflow: hidden;
+}
+
+.main #formulario .radios div{
+	margin-left: 30%;
+	height: 35px;
+	width: 65%;
+}
+
+.main #formulario .radios div label{
+	height: 100%;
+	width: 50%;
+}
+
+.main #formulario .radios div input[type="radio"] + label span{
+	display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(/images/radio_sheet.png) -38px top no-repeat;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor:pointer;
+}
+.main #ingresar{
+    background-image:url(/images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100vw;
+}
+.main #formulario-ingresar{
+    margin-top: 8vh;
+    height: 45vh;
+    width: 90vw;
+    margin: 5vw;
+    padding: 3%;
+    background-color: rgba(255,250,250,0.);
+    -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+}
+
+
+
+.main #formulario-ingresar div{
+    margin: 5vw;
+    width: 95%;
+  
+}
+
+
+.main #formulario .radios div input[type="radio"]:checked + label span{
+    background: url(/images/radio_sheet.png) -57px top no-repeat;
+}
+
+#form-registro{
+    background-color: rgba(255,250,250,0.);
+    border:3px solid red;
+    
+    -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+}
+
+.main #perfil #foto-section{
+	border:1px solid blue;
+	height: 25vh;
+	width: 30vw;
+	
+}
+
+.main #perfil #foto-section .contenedor{
+	height: 85%;
+	width: 100%;
+	border:1px solid red;
+}
+
+.main #perfil #foto-section:hover #controles-foto{
+	display: block;
+}
+
+.main #perfil #foto-section #controles-foto{
+	background: #000;
+	border:1px solid black;
+	display: none;
+	float: left;
+	position: fixed;
+	width: 30%;
+	z-index: 5;
+}
+
+.main #perfil #foto-section #controles-foto input[type="button"]{
+	background: #000;
+	border: none;
+	color:#fff;
+	margin-right: 4px;
+}
+
+#camara, #foto{
+    width: 100%;
+    min-height: 100%;
+
+}
+
+
+
+@media screen and (min-width: 450px){
+    .main .logo{
+	height: 100vh;
+	margin: 2% 1% 2% 4%;
+	width: 55vw;
+    float: left;
+       
+}
+    .main #titulo-index{
+        float:left;
+        width: 35vw;
+        margin-top: 50vh; 
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+        
+    }
+    .main .frutas, .verduras, .plantas,.cereales{
+	   height: 60vh;
+       width:30vw;
+    }
+    .main .frutas a figcaption,.verduras a figcaption,.plantas a figcaption,.cereales a figcaption{
+        font-size: 1.3em;
+    }
+    .main #formulario-ingresar{
+  
+    height: 90vh;
+    margin: 5vw;
+    padding: 1%;
+}
+}
+
+
+
+
+/*Tables+*************************************
+****************************************
+************************************************************************************************************************
+*************************************************************************************************************************************
+*/
+
+@media screen and (min-width: 960px){
+
+	.encabezado{
+		background: #179f12;
+		border-bottom: 5px solid #d6ae19;
+		border-radius: 5px;
+		display: block;
+		height: 10vh;
+		margin: 2% 0 2% 5%;
+		text-align: center;
+		width: 90%;
+	}
+
+	.encabezado h2{
+		color: #fff;
+		padding-top: 1%;
+	}
+
+	.categorias{
+	    background: #31be5e;
+	    display: block;
+	    float:left;
+	    height:60vh;
+	    margin-left:5%;
+	    position: relative;
+	    width: 20%;
+	}
+
+	.categorias .menu-icono{
+		display: none;
+	}
+
+	.categorias .menu{
+		height: 100%;
+		margin-top: 0;
+		opacity: 1;
+		overflow: hidden;
+	}
+
+	.categorias .menu ul li{
+		height: 10vh;
+	}
+
+	.categorias .menu ul li a{
+		height: 100%;
+	}
+
+	.categorias .menu figure{
+		background-color:#179f12; 
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+
+	.categorias .menu figure img{
+		height: 50%;
+		display: block;
+		width: 35%;
+	}
+
+	.categorias .menu figcaption{
+		height: 2vh;
+		color:#fff;
+		width:100%;
+	}
+
+	.main{
+		border: 1px solid #999;
+		float:right;
+		height: 75vh;
+		margin-right: 5%;
+		margin-top: 0;
+		overflow: hidden;
+		width: 65%;
+		z-index: 15;
+	}
+
+	.main .logo{
+		height: 80%;
+		margin: 5% 0 0 5%;
+		text-align: center;
+		width: 45%;
+	}
+
+	.logo img{
+		height: 100%;
+		width: 100%;
+	}
+
+	#titulo-index{
+		color:#0c7b9b;
+		font-size: 3rem;
+		text-decoration: underline;
+		width: 45%;
+	}
+
+	.descripcion{
+		color: #2d8a6f;
+		font-family: sans-serif;
+		font-size: 1.2rem;
+		margin-left: 7.5%;
+		margin-top: 2%;
+		text-align: justify;
+		width: 85%;
+	}
+
+	.main .titulo-section{
+		color:#0c7b9b;
+		font-size: 3em;
+		text-align: center;
+		text-decoration: underline;
+		width: 100%;
+	}
+
+	.main #contenedor-frutas,#contenedor-verduras,#contenedor-plantas {
+		box-sizing:border-box;
+		display: flex;
+		flex-wrap:wrap;
+	}
+
+	.main .frutas, .verduras, .plantas{
+		height: 30%;
+		margin:2% 0 0 3%;
+		text-align: center;
+		width: 15%;
+	}
+
+	.main .frutas a, .verduras a, .plantas a{
+		text-decoration: none;
+		font-family: sans-serif;
+		font-size: 1.5rem;
+		color: #123456;
+	}
+
+	.main .frutas img, .verduras img, .plantas img{
+		margin-top: 5%;
+		height: 8rem;
+		width: 7rem;
+	}
+}
+
+/*Empieza el nuevo diseño para escritorio
+----------------------------------------
+------------------------------------------
+--------------------------*******************************
+***********************************************************************
+*********************************************************************
+****************************************************************************************
+**********************************************************************************************
+
+*****************************************************************************************
+*************************************************************************************************
+******************************************************************************************************
+**********************************************************************************************
+*****************************************************************************************
+*************************************************************************************************
+******************************************************************************************************
+**********************************************************************************************
+*****************************************************************************************
+*************************************************************************************************
+******************************************************************************************************
+**********************************************************************************************
+---*/
+@media screen and (min-width: 1200px){
+	html{
+		padding: 0 5% 0 5%;
+	}
+	
+	body{
+		background: url('/images/bg.png');
+	}
+
+
+	#check-nav,.menu-icono{
+		display: none;
+	}
+
+	.encabezado{
+		background: #000;
+		border-bottom: 5px dashed #fff;
+		font-size: 1.8rem;
+		height: 20vh;
+		margin: 1% 0 1% 5%;
+		padding-top: 2%;
+		text-align: right;
+		width: 90%;		
+	}
+
+	.encabezado h2{
+		text-align: center;
+	}
+
+	.categorias{
+		background: transparent;
+	    height:6vh;
+	    margin-bottom: 1%;
+	    width: 90%;
+	}
+
+	.categorias .menu ul li a{
+		height: 100%;
+	    width: 100%;
+	}
+
+	.categorias .menu figure img{
+		display: none;
+	}
+
+	.menu ul li{
+		background-color: #179f12;
+		border-radius: 5px;
+		box-sizing:border-box;
+		display:block;
+		float: left;
+		height: 5vh;
+		list-style: none;
+		margin: 0 0.5% 0.5% 0.5%;
+		padding-top: 0.5%;
+		text-align: center;
+		text-decoration: none;
+		width: 12vw;
+	}
+
+	.menu #login{
+		background-color: transparent;
+		width: 7vw;
+	}
+
+	.menu #login a{
+		color:#123456;
+		display: block;
+		font-family: sans-serif;
+		font-size: 1rem;
+		height: 100%;
+
+		text-decoration: underline;
+		width: 100%;
+	}
+
+	.menu ul li:hover{
+		border-bottom: 5px solid #d6ae19;
+	}
+
+	.menu ul li a{
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 1.2rem;
+		height: 5vh;
+		text-decoration: none;
+		width: 15vw;
+	}
+
+	.main{
+		background-color: #fff;
+		height: 70vh;
+		margin-left: 5%;
+		width: 80vw;
+		border:1px solid #fff;
+	}
+
+	.main .logo{
+		float: left;
+		height: 55vh;
+		margin:1% 2% 1% 2%;
+		text-align: center;
+		width: 30%;
+	}
+	.main .logo img{
+		height: 100%;
+		width: 100%;
+	}
+
+	.main #titulo-index{
+		color:#0c7b9b;
+		font-size: 3rem;
+		margin-left: 40%;
+		text-decoration: underline;
+		width: 40%;
+	}
+
+	.main .descripcion{
+		color: #2d8a6f;
+		display: block;
+		font-size: 1.2rem;
+		margin-left: 40%;
+		margin-top: 2%;
+		text-align: justify;
+		width: 50%;
+	}
+
+	.main #contenedor-frutas,#contenedor-verduras,#contenedor-plantas,#contenedor-cereales {
+		box-sizing:border-box;
+		display: flex;
+		flex-wrap:wrap;
+	}
+
+	.main .frutas, .verduras, .plantas,.cereales{
+		height: 30%;
+		margin:2% 0 0 3%;
+		text-align: center;
+		width: 15%;
+	}
+
+	.main .frutas a, .verduras a, .plantas a,.cereales a{
+		text-decoration: none;
+		font-family: sans-serif;
+		font-size: 1.5rem;
+		color: #123456;
+	}
+
+	.main .frutas img, .verduras img, .plantas img, .cereales img{
+		margin-top: 5%;
+		height: 8rem;
+		width: 7rem;
+	}
+}
+
+
+
+
+
+
+
+
+

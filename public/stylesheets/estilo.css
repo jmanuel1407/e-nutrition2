@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+     color:#999;
+}
+        
+ul li.small {
+    font-style: italic;
+}
+            
+footer {
+        margin-top: 25px;
+        border-top: 1px solid #eee;
+        padding-top: 25px;
+}
+            
+i[data-id] {
+    cursor: pointer;
+    color: #eee;
+}
+            
+i[data-id]:hover {
+    color: #c75a6d;
+}
+            
+.push-down {
+    margin-top: 25px;
+}
+            
+#save-button {
+    margin-left: 10px;
+}
