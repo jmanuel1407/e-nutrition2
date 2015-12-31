@@ -16,20 +16,14 @@ exports.load = function(req, res, next, userId) {
 };
 
 
+
 //POST Recibe los datos para guardar al nuevo usuario en la DB
 exports.create = function(req, res) {
     var user = models.User.build( req.body.user );
-    user.then(function(err){
-            if (err) {
-              res.render('/');
-            }else {
-                user.save({fields: ["username", "password",
-                  "correo","edad","sexo","peso"]}).then(function(){
-                    req.session.user = {id:user.id, username:user.username};
-                    res.redirect('/');
-                });
-              }
-          }).catch(function(error){next(error)});
+    user.save({fields: ["username", "password",
+      "correo","edad","sexo","peso"]}).then(function(){
+        res.redirect('/');
+      })
 };
 
 exports.registro = function(req, res){

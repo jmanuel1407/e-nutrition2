@@ -22,7 +22,7 @@ exports.create = function(req, res) {
     var userController = require('./user_controller');
     userController.autenticar(login, password, function(error, user) {
         if (error) {  
-            res.redirect("/login");        
+            res.redirect("/login");      
             return;
         }
         req.session.user = {id:user.id, username:user.username, isAdmin:user.isAdmin};
