@@ -15,12 +15,25 @@ exports.load = function(req, res, next, userId) {
   ).catch(function(error){next(error)});
 };
 
+exports.new = function(req, res) {
+    var user = models.User.build( // crea objeto user 
+        {username: "", password: ""}
+    );
+    res.render('user/new', {user: user, errors: []});
+};
 
-exports.registro = function(req, res){
+/*exports.registro = function(req, res){
   var user=models.User.build({
     usuario:"Usuario",nip:"Nip",correo:"Correo",
     edad:"Edad",sexo:"Sexo",peso:"Peso"});
   
+  res.render('sesion/registro',{user:user});
+};*/
+
+exports.registro = function(req, res){
+  var user=models.User.build({
+    username:"",password:"",correo:"",
+    edad:"",sexo:"",peso:""});
   res.render('sesion/registro',{user:user});
 };
 
@@ -30,6 +43,7 @@ exports.create = function(req, res) {
     var user = models.User.build( req.body.user );
     user.save({fields: ["username", "password",
       "correo","edad","sexo","peso"]}).then(function(){
+        req.session.user = {id:user.id, username:user.username};
         res.redirect('/');
       })
 };
