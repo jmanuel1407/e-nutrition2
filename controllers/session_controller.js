@@ -14,6 +14,7 @@ exports.new = function(req, res) {
     res.render('sesion/ingresar', {errors: errors});
 };
 
+
 //Crear la sesion si usuario se autentica
 exports.create = function(req, res) {
     var login     = req.body.login;
@@ -22,11 +23,12 @@ exports.create = function(req, res) {
     var userController = require('./user_controller');
     userController.autenticar(login, password, function(error, user) {
         if (error) {  
+            req.session.errors = [{"message":'Se ha producido un error'+error}];
             res.redirect("/login");      
             return;
         }
-        req.session.user = {id:user.id, username:user.username, isAdmin:user.isAdmin};
-        res.redirect("/");
+        req.session.user = {username:user.username};
+        res.redirect(req.session.redir.toString());
     });
 };
 

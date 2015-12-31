@@ -16,6 +16,14 @@ exports.load = function(req, res, next, userId) {
 };
 
 
+exports.registro = function(req, res){
+  var user=models.User.build({
+    usuario:"Usuario",nip:"Nip",correo:"Correo",
+    edad:"Edad",sexo:"Sexo",peso:"Peso"});
+  
+  res.render('sesion/registro',{user:user});
+};
+
 
 //POST Recibe los datos para guardar al nuevo usuario en la DB
 exports.create = function(req, res) {
@@ -24,14 +32,6 @@ exports.create = function(req, res) {
       "correo","edad","sexo","peso"]}).then(function(){
         res.redirect('/');
       })
-};
-
-exports.registro = function(req, res){
-  var user=models.User.build({
-    usuario:"Usuario",nip:"Nip",correo:"Correo",
-    edad:"Edad",sexo:"Sexo",peso:"Peso"});
-  
-  res.render('sesion/registro',{user:user});
 };
 
 // Comprueba si el usuario esta registrado en users
