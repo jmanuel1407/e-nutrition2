@@ -1,4 +1,4 @@
-var models = require ('../models/models.js');
+//var models = require ('../models/models.js');
 
 exports.fruta = function(req, res){
 	res.render('menu/fruta');

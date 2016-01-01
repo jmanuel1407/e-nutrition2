@@ -6,7 +6,7 @@ var enutritionController = require('../controllers/e-nutrition_controller');
 var sessionController = require('../controllers/session_controller');
 var userController = require('../controllers/user_controller');
 
-router.param('userId', userController.load);  // autoload :userId
+//router.param('userId', userController.load); 
 
 
 /* GET home page. */
@@ -22,8 +22,8 @@ router.get('/menu/fruta',enutritionController.fruta);
 router.get('/menu/verdura',enutritionController.verdura);
 router.get('/menu/planta',enutritionController.planta);
 router.get('/menu/cereal',enutritionController.cereal);
-router.get('/sesion/registro',userController.registro);
-router.post('/sesion/create',userController.create);
+//router.get('/sesion/registro',userController.registro);
+//router.post('/sesion/create',userController.create);
 router.get('/perfil',enutritionController.perfil);
 router.get('/notas',enutritionController.notas);
 
