@@ -1,4 +1,4 @@
-var users = {admin:{id:1, username:"admin", password:"1234"}};
+var users = {admin:{id:1, username:"admin", password:"1234", peso:"75kg"}};
 // Comprueba si el usuario esta registrado en users
 //Si autenticacion falla o hay errores se ejecuta callback(error).
 

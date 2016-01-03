@@ -2,10 +2,14 @@ CACHE MANIFEST
 #5
 
 CACHE:
-/stylesheets/style.css
+stylesheets/style.css
 images/logoL.jpg
+images/logoLL.jpg
 images/logoM.jpg
+images/logoMM.jpg
 images/logoH.jpg
+images/logoHH.jpg
+images/bg.png
 js/modernizr.min.js
 js/jquery.min.js
 js/index.db.js

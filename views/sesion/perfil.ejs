@@ -3,19 +3,19 @@
 	<h2 class="titulo-section">Control</h2><br>
 
 	<div id="foto-section">
-		<div class="contenedor">
+		<div class="contenedor" id="contenedor-camara">
 			<video id="camara" autoplay></video>
 		</div>
 
-		<div class="contenedor">
+        <div id='controles-foto'>
+            <input id='botonIniciar' type='button' value = 'Iniciar'></input>
+            <!--<input id='botonDetener' type='button' value = 'Detener'></input>-->
+            <input id='botonFoto' type='button' value = 'Foto'></input>
+        </div>
+
+		<div class="contenedor" id="contenedor-foto">
 			<canvas id="foto" ></canvas>
 		</div> 
-
-		<div id='controles-foto'>
-			<input id='botonIniciar' type='button' value = 'Iniciar'></input>
-			<input id='botonDetener' type='button' value = 'Detener'></input>
-			<input id='botonFoto' type='button' value = 'Foto'></input>
-    	</div>
 	</div>
 
 	<script type="text/javascript">
@@ -74,14 +74,57 @@
 </script>
 
 <div class="informacion-perfil">
-	<p><%=session.user.username%></p>
+    <h3>Información de perfil</h3>
+    <div>
+        <h4>Usuario: </h4> <p><%=session.user.username%></p>
+    </div>
+
+    <div>
+        <h4>Peso: </h4> <p><%=session.user.peso%></p>
+    </div>
 
 </div>
+	<a href="/notas"></a><br>
+    <hr/>
 
-	
+    <div class="container">
+    <h1>Registro</h1>
 
+    <div id="ui-container" class="row">
+        <div class="col-sm-3">
+            <a href="#" id="delete-all-btn" class="btn-xs"><i class="fa fa-trash-o"></i> Borrar todo</a>
+            
+            <ul id="list-container" class="list-unstyled"></ul>       
+        </div>
 
-	<a href="/notas">Agregar una nota</a>
+        <div class="col-sm-8 push-down">
+            <input type="hidden" id="id-hidden" />
+            
+            <input id="title-text" type="text" class="form-control" tabindex="1" placeholder="titulo" autofocus />
+            <br />
+                
+            <textarea id="notes-text" class="form-control" tabindex="2" placeholder="texto"></textarea>
+                
+            <div class="pull-right push-down">
+                <a href="#" id="clear-button" tabindex="4">Borrar</a>
+                <button id="save-button" tabindex="3" class="btn btn-default btn-primary"> 
+                    <i class="fa fa-save"></i> Guardar 
+                </button>
+            </div>
+        </div>
+    </div>
+   
+    <script id="note-template" type="text/template">
+        <li>
+            <i data-id="{ID}" class="fa fa-minus-circle"></i>
+            <a href="#" data-id="{ID}">{TITLE}</a>
+        </li>
+    </script>
+    <script id="empty-note" type="text/template">
+        <li class="text-muted small">Sin Notas</li>
+    </script>
+
+</div>
 
 
 </div>
