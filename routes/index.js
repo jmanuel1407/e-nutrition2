@@ -22,6 +22,12 @@ router.get('/menu/fruta',enutritionController.fruta);
 router.get('/menu/verdura',enutritionController.verdura);
 router.get('/menu/planta',enutritionController.planta);
 router.get('/menu/cereal',enutritionController.cereal);
+
+router.get('/fruta/1',enutritionController.showFrutas);
+router.get('/verdura/1',enutritionController.showVerduras);
+router.get('/planta/1',enutritionController.showPlantas);
+router.get('/cereal/1',enutritionController.showCereales);
+
 //router.get('/sesion/registro',userController.registro);
 //router.post('/sesion/create',userController.create);
 router.get('/perfil',enutritionController.perfil);

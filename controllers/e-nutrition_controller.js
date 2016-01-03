@@ -24,3 +24,17 @@ exports.perfil = function(req, res){
 exports.notas = function(req, res){
 	res.render('sesion/notas');
 };
+
+//View Recetas
+exports.showFrutas = function(req,res){
+		res.render('menu/frutas/1');
+};
+exports.showVerduras = function(req,res){
+		res.render('menu/verduras/1');
+};
+exports.showPlantas = function(req,res){
+		res.render('menu/plantas/1');
+};
+exports.showCereales = function(req,res){
+		res.render('menu/frutas/1');
+};

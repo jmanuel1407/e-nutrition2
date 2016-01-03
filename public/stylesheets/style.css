@@ -6,6 +6,11 @@
 	margin: 0;
 	padding: 0;
 }
+a{
+	    color: #fff;
+    cursor: pointer;
+	text-decoration: none;
+}
 
 .encabezado{
 	display: none;
@@ -22,6 +27,7 @@
 
 #check-nav{
 	display: none;
+
 }
 
 .menu-icono{
@@ -128,7 +134,6 @@
 }
 
 .main{
-	height: 90vh;
 	margin-top: 50px;
 	width: 100vw;
 	text-align: center;
@@ -384,9 +389,89 @@
 	text-align: left;
 	width: 40%;
 }
+p{
+	line-height: 1.4;
+    padding-bottom: 1em;
+}
+.container {
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  padding: 0.5em;
+}
+.info-wrapper .titulo {
+    font-family: 'Roboto Slab', serif;
+    color: #35393a;
+    font-size: 1.4em;
+    height: auto;
+    margin-bottom: .5em;
+}
+.info-wrapper .extracto {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #35393a;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+.info-wrapper .extracto {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #35393a;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+.tipo-contenido {
+    color: #ed1c24;
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-size: 0.8em;
+}
+.section-resetas{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+.main-reseta{
+	width: 100%;
+}
+.main-reseta .img-receta{
+	height: 450%;
+}
+.reseta{
+	width: 50%;
+	overflow: hidden;
+	padding: 1%;
+}
+.img-receta{
+	overflow: hidden;
+	height: 79.8px;
+}
+.img-receta img{
+	width: 100%;
+	height: 100%;
+}
+.linea.roja {
+    border-bottom: 1px solid #ed1c24;
+}
+.linea {
+    width: 120px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
-
+hr {
+    display: block;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    border-style: inset;
+    border-width: 1px;
+    box-sizing: border-box;
+}
 @media screen and (min-width: 450px){
     .main .logo{
 	height: 100vh;
@@ -500,7 +585,6 @@
 	.main{
 		border: 1px solid #999;
 		float:right;
-		height: 75vh;
 		margin-right: 5%;
 		margin-top: 0;
 		overflow: hidden;
@@ -666,7 +750,6 @@
 
 	.main{
 		background-color: #fff;
-		height: 70vh;
 		margin-left: 5%;
 		width: 80vw;
 		border:1px solid #fff;
@@ -777,6 +860,18 @@
 		height: 7vh;
 		margin-top: 2%;
 		width: 30%;
+	}
+	.reseta{
+	width: 25%;
+	overflow: hidden;
+	padding: 1%;
+	}
+	.img-receta-g{
+		height: 450px;
+	}
+	.img-receta{
+		overflow: hidden;
+		height: 158.2px;
 	}
 }
 
