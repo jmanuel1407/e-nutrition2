@@ -22,7 +22,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser('Quiz 2015')); //Para cifrar cookie
+app.use(cookieParser('e-nutrition2015')); //Para cifrar cookie
 app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
 
