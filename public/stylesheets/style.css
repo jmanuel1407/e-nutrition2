@@ -17,7 +17,7 @@ a{
 }
 
 .categorias{
-	background-color: #108e32;
+	background-color: #222222;
 	height:50px;
 	position: fixed;
 	top:0;
@@ -31,16 +31,22 @@ a{
 }
 
 .menu-icono{
+	background-color: #e26920; 
+	border-radius: 5px;
 	color: #fff;
 	float: right;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
+	height: 6vh;
+	margin: 1.5% 1.5% 0 0;
 	opacity: 0.8;
 	text-align: center;
-	width: 20vw;
+	width: 12vw;
 }
-
+.menu-icono:hover{
+	background-color: #18b928;
+}
 #check-nav:checked ~ .menu-icono{
-	opacity: 1; 
+	background-color: #18b928; 
 }
 
 .menu{
@@ -53,47 +59,9 @@ a{
 #check-nav:checked ~ .menu{
 	height: auto; 
 }
-/*.menuButton {
-  position: relative;
-  transition-property: background-color, color;
-  transition-duration: 1s;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: background-color, color;
-  -webkit-transition-duration: 1s;
-  -o-transition-property: background-color, color;
-  -o-transition-duration: 1s;
-  text-align: left;
-  background-color: grey;
-  left: 5px;
-  top: 5px;
-  height: 26px;
-  color: white;
-  border-color: black;
-  font-family: sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-  -moz-box-shadow: 2px 2px 1px black;
-  padding: 2px 4px;
-  border: solid 1px black;
-}
-
-.menuButton:hover {
-  position: relative;
-  transition-property: background-color, color;
-  transition-duration: 1s;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: background-color, color;
-  -webkit-transition-duration: 1s;
-  -o-transition-property: background-color, color;
-  -o-transition-duration: 1s;
-  background-color:white;
-  color:black;
-  -moz-box-shadow: 2px 2px 1px black;
-} */
-
 
 .menu ul li{
-	background-color: #01182C;
+	background-color: #222222;
 	border-bottom: 1.5px groove #fff;
 	display: block;
 	height: 40px;
@@ -102,6 +70,7 @@ a{
 	width: 100vw;
 	z-index: 5;
 }
+
 
 .menu ul li a,.login a{
 	display: block;
@@ -122,7 +91,7 @@ a{
 }
 
 .menu ul .login{ 
-	background-color: #000d18;
+	background-color: #0c0c0c;
 	border-bottom: 0;
 	float: left;
 	height: 40px;
@@ -318,12 +287,18 @@ a{
 	overflow: hidden;
 }
 
-.main #perfil #foto-section{
-	border:1px solid #999;
+.main #perfil #foto-perfil{
+	border:2px solid #999;
 	height: 150px;
 	width: 130px;
-	position: relative;
+	overflow: hidden;
+	margin: 0;
 }
+#foto-perfil img{
+	width: 100%;
+	height: 100%;
+}
+
 
 .main #perfil #foto-section #contenedor-camara{
 	z-index: 5;
@@ -472,6 +447,42 @@ hr {
     border-width: 1px;
     box-sizing: border-box;
 }
+.btn{
+	width: 48%;
+}
+.btn-add {
+	height: 37px;
+	width: 30%;
+	position: fixed;
+	left: 70%;
+	top: 4;
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811));
+	background:-moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding-top:7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+}
+
+
 @media screen and (min-width: 450px){
     .main .logo{
 	height: 100vh;
@@ -680,63 +691,78 @@ hr {
 **********************************************************************************************
 ---*/
 @media screen and (min-width: 1000px){
-	html{
-		padding: 0 5% 0 5%;
-	}
 	
-	body{
-		background: url('/images/bg.png');
-	}
-
 	#check-nav,.menu-icono{
 		display: none;
 	}
 
 	.encabezado{
-		background: #108e32;
-		border: 3px dashed #fff;
-		font-size: 1.8rem;
-		height: 15vh;
-		margin: 1% 0 1% 5%;
-		padding-top: 1%;
+		background: #fff;
+		border-bottom:none;
+		border-radius: 0;
+		height: 9vh;
+		margin: 0;
+		padding-top: 0;
 		text-align: center;
-		width: 90%;		
+		width: 100%;		
+	}
+	.encabezado h2{
+		color: #18b928;
+		font-size: 2rem;
+		padding-top: 1%;
 	}
 
 	.categorias{
-		background: transparent;
-	    height:5vh;
-	    margin-bottom: 1%;
-	    width: 90%;
+		background: #222222;
+		border-bottom: 2px solid #000;
+	    height:10vh;
+	    margin: 0 0 1% 0;
+	    width: 100%;
+	}
+	.menu #logotipo{
+		background: #222222;
+		display: inline;
+		float: left;
+		margin: 0 5vw 0 5vw;
+		width: 15vw;
+	}
+
+	.menu #logotipo img{
+		height: 95%;
+		width: 100%;
 	}
 
 	.menu ul li{
-		background-color: #179f12;
-		border-radius: 5px;
+		background-color: transparent;
+		border-radius: 0;
 		display:block;
 		float: left;
-		height: 5vh;
+		height: 100%;
 		list-style: none;
-		margin: 0 0.2% 0.5% 0.2%;
+		margin: 0 0 0 0;
 		padding-top: 0;
 		text-align: center;
 		text-decoration: none;
-		width: 12vw;
+		width: 10vw;
 	}
 
 	.menu ul li a,.login a{
 		height: 100%;
 		display: block;
+		padding-top: 15%;
 		width: 100%;
 	}
 
 	.menu ul li a:hover{
-		border:5px ridge transparent;
+		background-color: #18b928;
 	}
 
 	.menu ul .login{
-		background: #082a72;
-		width: 9vw;
+		background: #18b928;
+		width: 10vw;
+	}
+	.menu ul .login a:hover{
+		background-color: #e26920;
 	}
 
 	.menu ul .login a{
@@ -809,7 +835,7 @@ hr {
 	.main .frutas a, .verduras a, .plantas a,.cereales a{
 		text-decoration: none;
 		font-family: sans-serif;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		color: #123456;
 	}
 
@@ -866,13 +892,18 @@ hr {
 	overflow: hidden;
 	padding: 1%;
 	}
-	.img-receta-g{
-		height: 450px;
-	}
+	.main-reseta .img-receta{
+	height: 400px;
+	overflow: hidden;
+}
+.main-reseta .img-receta img{
+	height: 450px;
+}
 	.img-receta{
 		overflow: hidden;
 		height: 158.2px;
 	}
+
 }
 
 

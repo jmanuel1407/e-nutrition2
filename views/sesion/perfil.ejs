@@ -1,77 +1,10 @@
 <div id="perfil">
 
 	<h2 class="titulo-section">Control</h2><br>
-
-	<div id="foto-section">
-		<div class="contenedor" id="contenedor-camara">
-			<video id="camara" autoplay></video>
-		</div>
-
-        <div id='controles-foto'>
-            <input id='botonIniciar' type='button' value = 'Iniciar'></input>
-            <!--<input id='botonDetener' type='button' value = 'Detener'></input>-->
-            <input id='botonFoto' type='button' value = 'Foto'></input>
-        </div>
-
-		<div class="contenedor" id="contenedor-foto">
-			<canvas id="foto" ></canvas>
-		</div> 
-	</div>
-
-	<script type="text/javascript">
-    //Nos aseguramos que estén definidas
-    //algunas funciones básicas
-    window.URL = window.URL || window.webkitURL;
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || function() {
-        alert('Su navegador no soporta navigator.getUserMedia().');};
-
-    //Este objeto guardará algunos datos sobre la cámara
-    window.datosVideo = {
-        'StreamVideo': null,
-        'url': null
-    }
-
-    jQuery('#botonIniciar').on('click', function(e) {
-        //Pedimos al navegador que nos da acceso a 
-        //algún dispositivo de video (la webcam)
-        navigator.getUserMedia({
-            'audio': false,
-            'video': true
-        }, function(streamVideo) {
-            datosVideo.StreamVideo = streamVideo;
-            datosVideo.url = window.URL.createObjectURL(streamVideo);
-            jQuery('#camara').attr('src', datosVideo.url);
-
-        }, function() {
-            alert('E-nutrition, dice: No fue posible obtener acceso a la cámara.');
-        });
-
-    });
-
-    jQuery('#botonDetener').on('click', function(e) {
-
-        if (datosVideo.StreamVideo) {
-            datosVideo.StreamVideo.stop();
-            window.URL.revokeObjectURL(datosVideo.url);
-        }
-
-    });
-
-    jQuery('#botonFoto').on('click', function(e) {
-        var oCamara, oFoto, oContexto, w, h;
-
-        oCamara = jQuery('#camara');
-        oFoto = jQuery('#foto');
-        w = oCamara.width();
-        h = oCamara.height();
-        oFoto.attr({
-            'width': w,
-            'height': h
-        });
-        oContexto = oFoto[0].getContext('2d');
-        oContexto.drawImage(oCamara[0], 0, 0, w, h);
-    });
-</script>
+    <figure id="foto-perfil">
+  <img src= "/images/<%=session.user.image%>" alt="Perfil">
+    </figure>
+    <a class="btn" href="/user/<%=session.user.id%>/edit"><button>Editar</button></a>
 
 <div class="informacion-perfil">
     <h3>Información de perfil</h3>
@@ -80,7 +13,7 @@
     </div>
 
     <div>
-        <h4>Peso: </h4> <p><%=session.user.peso%></p>
+        <h4>Peso: <%=session.user.id%> </h4> <p><%=session.user.peso%></p>
     </div>
 
 </div>

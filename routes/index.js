@@ -2,61 +2,45 @@ var express = require('express');
 var multer  = require('multer');
 var router = express.Router();
 
-var enutritionController = require('../controllers/e-nutrition_controller');
+var frutasController = require('../controllers/frutas_controller');
+var recetasController = require('../controllers/recetas_controller');
+
 var sessionController = require('../controllers/session_controller');
 var userController = require('../controllers/user_controller');
 
-//router.param('userId', userController.load); 
-
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'E-nutrition' });
+// Página de entrada (home page)
+router.get('/', function(req, res) {
+  res.render('index', { title: 'E-Nutrition', errors: []});
 });
 
-router.get('/login',sessionController.new);//form login
-router.post('/login',sessionController.create);//crear seseión
-router.get('/logout',sessionController.destroy);//destruir sesión
+// Autoload de comandos con ids
+router.param('frutaId', frutasController.load);  // autoload :frutaId
+router.param('recetaId', recetasController.load);  // autoload :frutaId
+router.param('userId', userController.load);  // autoload :userId
 
-router.get('/menu/fruta',enutritionController.fruta);
-router.get('/menu/verdura',enutritionController.verdura);
-router.get('/menu/planta',enutritionController.planta);
-router.get('/menu/cereal',enutritionController.cereal);
+// Definición de rutas de sesion
+router.get('/login',  sessionController.new);     // formulario login
+router.post('/login', sessionController.create);  // crear sesión
+router.get('/logout', sessionController.destroy); // destruir sesión
 
-router.get('/fruta/1',enutritionController.showFrutas);
-router.get('/verdura/1',enutritionController.showVerduras);
-router.get('/planta/1',enutritionController.showPlantas);
-router.get('/cereal/1',enutritionController.showCereales);
+// Definición de rutas de cuenta
+router.get('/user/new',  userController.new);     // formulario sign un
+router.post('/user',  userController.create);     // registrar usuario
+router.get('/user/:userId(\\d+)/edit',  sessionController.loginRequired, userController.ownershipRequired, userController.edit);     // editar información de cuenta
+router.put('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.update);     // actualizar información de cuenta
+router.delete('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.destroy);     // borrar cuenta
 
-//router.get('/sesion/registro',userController.registro);
-//router.post('/sesion/create',userController.create);
-router.get('/perfil',enutritionController.perfil);
-router.get('/notas',enutritionController.notas);
-
+// Definición de rutas de /quizes
+router.get('/frutas',                      frutasController.index);
+router.get('/frutas/new', 				   frutasController.new);
+router.get('/frutas/:frutaId(\\d+)/edit',   sessionController.loginRequired, frutasController.ownershipRequired, frutasController.edit);
+router.put('/frutas/:frutaId(\\d+)',        sessionController.loginRequired, frutasController.ownershipRequired, multer({ dest: './public/media/'}), frutasController.update);
+router.delete('/frutas/:frutaId(\\d+)',     sessionController.loginRequired, frutasController.ownershipRequired, frutasController.destroy);
+router.post('/frutas/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), frutasController.create);
+router.get('/frutas/:ingrediente', recetasController.show);
+//router.get('/frutas?search=:receta', recetasController.show);
+router.get('/perfil', sessionController.perfil);
+router.get('/perfil/foto', sessionController.foto);
+router.get('/notas',sessionController.notas);
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
 
-	<!--<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">-->
     <!--<link rel="stylesheet" href="/stylesheets/estilo.css">-->
     
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="/fonts/icomoon/style.css">
 
     <link rel="stylesheet"
@@ -35,20 +35,21 @@
 </head>
 
 <body>
-	<section class="encabezado">
-		<h2>E-nutrition: Innovando para tu salud</h2>
-	</section>
+  <section class="encabezado">
+    <h2>E-nutrition: Innovando para tu salud</h2>
+  </section>
 
 <header class="categorias">
-	<input type="checkbox" id="check-nav">
+  <input type="checkbox" id="check-nav">
     <label class="menu-icono" for="check-nav">
-		<span class="icon-menu"></span>
-	</label>
+    <span class="icon-menu"></span>
+  </label>
     <nav id="menu" class="menu">
+        <figure id="logotipo"><img src="/images/logo.png"></figure>
         <ul>
             <li><a href="/">Inicio</a></li>
 
-            <li><a href="/menu/fruta">Frutas</a></li>
+            <li><a href="/frutas">Frutas</a></li>
 
             <li><a href="/menu/verdura">Verduras</a></li>
             
@@ -57,12 +58,12 @@
             <li><a href="/menu/cereal">Cereales</a></li>
 
             <%if(!session.user){%>
-            	<li class="login"><a href="/login">Ingresar</a></li>
-            	<li class="login"><a href="/sesion/registro">Registrarse</a></li>
-        	<%}else{%>
+              <li class="login"><a href="/login">Ingresar</a></li>
+              <li class="login"><a href="/user/new">Registrarse</a></li>
+          <%}else{%>
                <li class="login"><a href="/perfil"><%=session.user.username%></a></li>
-        	   <li class="login"><a href="/logout">Salir</a></li>
-        	<%}%>
+             <li class="login"><a href="/logout">Salir</a></li>
+          <%}%>
         </ul>
 
     </nav>
@@ -71,6 +72,5 @@
 <section class="main">
     <%- body %>
 </section>
-
-</body>
+</body> 
 </html>

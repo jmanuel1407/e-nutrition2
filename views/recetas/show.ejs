@@ -1,0 +1,46 @@
+<section class="container">
+        
+      <!-- RECETA GRANDE -->
+ <% var i; for (i=0; i < receta.length; i++) {%> 
+     <% if (i ==0) {%>
+    <article class= "main-reseta">   
+          <a href="/recetas/<%= receta[i].nombre %>">
+                <figure class="img-receta">
+                <% if (receta[i].image){%>
+                  <img  src="/images/<%= receta[i].image %>"  alt="E-nutrition">
+                <%} else{%>
+                <img src="/images/receta.jpg">
+                 <%}%>
+                </figure>
+                <header class="info-wrapper">
+                  <h3 class="titulo" itemprop="name"><%= receta[i].nombre %></h3>
+                    <hr class="linea roja">
+                    <p class="extracto" itemprop="description"><%=receta[i].intro%></p>
+                    <p class="tipo-contenido"> -  RECETA   -</p>
+                </header>
+            </a>
+      
+    </article>
+    <%} else {%>
+    <!-- BLOQUE DE 4 -->
+    <section class="section-resetas">
+      <article class= "reseta">
+          <a href="reseta/1" title="<%= receta[i].nombre %>">
+                  <figure class="img-receta">
+                <% if (receta[i].image){%>
+                  <img  src="/images/<%= receta[i].image %>"  alt="E-nutrition">
+                <%} else{%>
+                <img src="/images/receta.jpg">
+                 <%}%>
+                  </figure>
+                  <header class="info-wrapper">
+                    <h3 class="titulo" itemprop="name"><%= receta[i].nombre %></h3>
+                      <hr class="linea roja">
+                      <p class="extracto" itemprop="description"><%= receta[i].intro %>  </p>
+                      <p class="tipo-contenido"> -  RECETA   -</p>
+                  </header>
+              </a>
+      </article>
+    <%}%>
+    <%}%>
+</section>
