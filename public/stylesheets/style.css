@@ -25,6 +25,7 @@ a{
 	z-index: 5;
 }
 
+
 #check-nav{
 	display: none;
 
@@ -45,9 +46,13 @@ a{
 .menu-icono:hover{
 	background-color: #18b928;
 }
+.menu #logotipo{
+	display: none;
+}
 #check-nav:checked ~ .menu-icono{
 	background-color: #18b928; 
 }
+
 
 .menu{
 	height: 0;

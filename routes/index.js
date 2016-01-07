@@ -38,7 +38,6 @@ router.put('/frutas/:frutaId(\\d+)',        sessionController.loginRequired, fru
 router.delete('/frutas/:frutaId(\\d+)',     sessionController.loginRequired, frutasController.ownershipRequired, frutasController.destroy);
 router.post('/frutas/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), frutasController.create);
 router.get('/frutas/:ingrediente', recetasController.show);
-//router.get('/frutas?search=:receta', recetasController.show);
 router.get('/perfil', sessionController.perfil);
 router.get('/perfil/foto', sessionController.foto);
 router.get('/notas',sessionController.notas);

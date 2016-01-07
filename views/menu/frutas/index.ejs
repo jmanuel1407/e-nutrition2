@@ -1,8 +1,9 @@
 <div id="contenedor-frutas">
   <h2 class="titulo-section">Frutas</h2>
-  <%if(session.user){%>
+  <%if(session.user) { 
+    if(session.user.isAdmin){%>
   <a class="btn-add" href="/frutas/new">Agregar Fruta</a>
-  <%}%>
+  <%}}%>
   
   <% var i; for (i=0; i < frutas.length; i++) {%> 
   <article class="frutas">       
@@ -13,8 +14,7 @@
     <img src="/images/fruta.png">
     <% } %>
     <figcaption><%= frutas[i].nombre %></figcaption></figure></a>
-      <%if(session.user) {
-         if (session.user.isAdmin || session.user.id === quizes[i].UserId) {%>
+      <%if (session.user && session.user.isAdmin){%>
 
         <a class="btn" href="/frutas/<%= frutas[i].id %>/edit"><button>Editar</button></a>
           <form method="post" action="/frutas/<%= frutas[i].id %>?_method=delete">
@@ -22,7 +22,7 @@
               Borrar
             </button>
           </form>
-        <%}
+        <%
       }%>
        </article>
   <% } %>

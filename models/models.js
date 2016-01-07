@@ -66,7 +66,7 @@ sequelize.sync().then(function() {
         Fruta.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Fruta.bulkCreate( 
-              [ {nombre: 'Plátano', FrutaId: 2, image: 'piña.jpg'},
+              [ {nombre: 'Plátano', FrutaId: 2},
               ]
             ).then(function(){console.log('Base de datos (tabla Fruta) inicializada');});
           };
