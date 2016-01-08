@@ -65,7 +65,7 @@ exports.new = function(req, res) {
     var user = models.User.build( // crea objeto user 
         {username: "User", password: "Password"}
     );
-    res.render('user/formulario', {user: user, errors: []});
+    res.render('user/new', {user: user, errors: []});
 };
 
 // POST /user
@@ -80,10 +80,12 @@ exports.create = function(req, res) {
                 res.render('user/new.ejs', {user: user, errors: err.errors});
             } else {
                 user // save: guarda en DB campos username y password de user
-                .save({fields: ["username", "password"]})
+                .save({fields: ["username", "password", "correo", "edad","peso", "sexo"]})
                 .then( function(){
                     // crea la sesión para que el usuario acceda ya autenticado y redirige a /
-                    req.session.user = {id:user.id, username:user.username};
+                    
+                    req.session.user = {id:user.id, username:user.username, image:user.image, peso:user.peso, isAdmin:user.isAdmin};
+
                     res.redirect('/');
                 }); 
             }
@@ -95,6 +97,7 @@ exports.create = function(req, res) {
 exports.update = function(req, res, next) {
   req.user.username  = req.body.user.username;
   req.user.password  = req.body.user.password;
+  req.user.image = req.body.user.image;
 
   req.user
   .validate()
@@ -104,7 +107,7 @@ exports.update = function(req, res, next) {
         res.render('user/' + req.user.id, {user: req.user, errors: err.errors});
       } else {
         req.user     // save: guarda campo username y password en DB
-        .save( {fields: ["username", "password"]})
+        .save( {fields: ["username", "password", "image"]})
         .then( function(){ res.redirect('/');});
       }     // Redirección HTTP a /
     }

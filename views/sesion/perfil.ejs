@@ -1,67 +1,35 @@
-<div id="perfil">
-
-	<h2 class="titulo-section">Control</h2><br>
-    <figure id="foto-perfil">
-  <img src= "/images/<%=session.user.image%>" alt="Perfil">
-    </figure>
-    <a class="btn" href="/user/<%=session.user.id%>/edit"><button>Editar</button></a>
-
-<div class="informacion-perfil">
-    <h3>Información de perfil</h3>
-    <div>
-        <h4>Usuario: </h4> <p><%=session.user.username%></p>
-    </div>
-
-    <div>
-        <h4>Peso: <%=session.user.id%> </h4> <p><%=session.user.peso%></p>
-    </div>
-
-</div>
-	<a href="/notas"></a><br>
-    <hr/>
-
-    <div class="container">
-    <h1>Registro</h1>
-
-    <div id="ui-container" class="row">
-        <div class="col-sm-3">
-            <a href="#" id="delete-all-btn" class="btn-xs"><i class="fa fa-trash-o"></i> Borrar todo</a>
-            
-            <ul id="list-container" class="list-unstyled"></ul>       
-        </div>
-
-        <div class="col-sm-8 push-down">
-            <input type="hidden" id="id-hidden" />
-            
-            <input id="title-text" type="text" class="form-control" tabindex="1" placeholder="titulo" autofocus />
-            <br />
-                
-            <textarea id="notes-text" class="form-control" tabindex="2" placeholder="texto"></textarea>
-                
-            <div class="pull-right push-down">
-                <a href="#" id="clear-button" tabindex="4">Borrar</a>
-                <button id="save-button" tabindex="3" class="btn btn-default btn-primary"> 
-                    <i class="fa fa-save"></i> Guardar 
-                </button>
+<section id= "section-perfil">
+    <article id="article-datos" >
+        <h1> <%=session.user.username%> </h1> 
+        <figure>
+            <img src="">
+            <figcaption><a class="btn-editar" href="/user/<%=session.user.id%>/edit"><button>Editar</button></a></figcaption>
+        </figure>
+    </article>
+    <article id="article-tabla" >
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Peso</th>
+                <th>Altura</th>
+            </tr>
+        </table>
+    </article>
+    <article = "article-registro">
+        <header>
+             <h1> Registrar </h1> 
+        </header>
+        <form>
+            <div>
+                <label class="rem">Fecha: </label>
+                <input id="title-text" type="date" class="form-control" tabindex="1" placeholder="Fecha" autofocus />
             </div>
-        </div>
-    </div>
-   
-    <script id="note-template" type="text/template">
-        <li>
-            <i data-id="{ID}" class="fa fa-minus-circle"></i>
-            <a href="#" data-id="{ID}">{TITLE}</a>
-        </li>
-    </script>
-    <script id="empty-note" type="text/template">
-        <li class="text-muted small">Sin Notas</li>
-    </script>
-
-</div>
-
-
-</div>
-
-
-
-
+            <div>
+                 <label class="rem">Peso: </label>
+                 <textarea id="notes-text" class="form-control" tabindex="2" placeholder="Peso"></textarea>
+           
+            </div>
+           
+        </form>
+    </article>
+</section>

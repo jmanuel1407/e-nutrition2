@@ -34,7 +34,7 @@ router.get('/logout', sessionController.destroy); // destruir sesión
 router.get('/user/new',  userController.new);     // formulario sign un
 router.post('/user',  userController.create);     // registrar usuario
 router.get('/user/:userId(\\d+)/edit',  sessionController.loginRequired, userController.ownershipRequired, userController.edit);     // editar información de cuenta
-router.put('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.update);     // actualizar información de cuenta
+router.put('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, multer({ dest: './public/media/'}), userController.update);     // actualizar información de cuenta
 router.delete('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.destroy);     // borrar cuenta
 
 // Definición de rutas de /quizes

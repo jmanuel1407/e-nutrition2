@@ -1,9 +1,17 @@
+<div>
+    <label for="preg" class="rem">Username:</label>
+<input type="text" id="username" name="user[username]" value="<%= user.username %>"/>
+</div>
+<div>
+    <label for="resp" class="rem">Password:</label>
+<input type="password" id="pass" name="user[password]"/>
+</div>
+<div>
+    <input type="file" id="image" accept="images/*" name="image"/> 
 
-<label for="preg" class="rem">Username:</label>
-<input type="text" id="username" name="user[username]" value="<%= user.username %>"/><p>
-<label for="resp" class="rem">Password:</label>
-<input type="password" id="pass" name="user[password]"/> <p>
-<input type="text" id="img" name="user[image]"/> <p>
+</div>
+<input type="text" id="img" name="image"/> 
+
 
 
 
@@ -38,8 +46,9 @@
 
    jQuery('#botonGuardar').on('click', function(e) {
 	   	var canvas = document.getElementById("foto");
-		var dataUrl = canvas.toDataURL(); // obtenemos la imagen como png
+		var dataUrl = canvas.toDataURL("image/png"); // obtenemos la imagen como png
 		//dataUrl=dataUrl.replace("image/png",'image/octet-stream'); // sustituimos el tipo por octet
+
 		document.getElementById("img").value = dataUrl;
 
 	});

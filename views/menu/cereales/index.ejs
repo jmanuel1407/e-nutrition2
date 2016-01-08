@@ -2,7 +2,7 @@
   <h2 class="titulo-section">Cereales</h2>
   <%if(session.user) { 
     if(session.user.isAdmin){%>
-  <a class="btn-add" href="/cereales/new">Agregar Fruta</a>
+  <a class="btn-add" href="/cereales/new">Agregar</a>
   <%}}%>
   
   <% var i; for (i=0; i < cereales.length; i++) {%> 

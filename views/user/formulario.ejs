@@ -1,3 +1,5 @@
+<div id="ingresar">
+    <h2 class="titulo-section">Registrar</h2>
 <div id="form-registro">
     <div>
         <label for="nombre">Usuario: </label>
@@ -7,7 +9,7 @@
     <div>
         <label for="nip">NIP: </label>
         <input id="nip" type="password" pattern="[0-9]{4}" placeholder="Inserte 4 dígitos" name="user[password]" required >
-    </div>	
+    </div>  
 
     <div>
         <label for="correo">E-mail: </label>
@@ -18,24 +20,21 @@
         <label for="edad">Edad: </label>
         <input id="edad" type="number" placeholder="Ingrese su edad" name="user[edad]" required>
     </div>
-
-    <div class="radios">
-        <label class="sex">Sexo: </label>
-        <div>
-            <label class="sexo" for="r1"><span></span> Hombre</label>
-            <!--<input type="radio" class="radio" name="user[sexo]" value="hombre" checked> Hombre-->
-            <input type="radio" id="r1" class="radio" name="user[sexo]" checked="" value="hombre">
-
-            <label class="sexo"  for="r2"><span></span> Mujer</label>
-            <!--<input type="radio" class="radio"  name="user[sexo]" value="mujer"> Mujer-->
-            <input type="radio" id="r2" class="radio" name="user[sexo]" value="mujer">
-        </div>
-    </div>
-
     <div class="peso">
         <label for="peso">Peso: </label>
         <input id="peso" type="number" placeholder="Peso actual" name="user[peso]" required>
     </div>
-  		
+    <div class="radios">
+        <label class="sex">Sexo: </label>
+        <label class="sexo" for="r1"class="labelsexo">Hombre</label>
+            <!--<input type="radio" class="radio" name="user[sexo]" value="hombre" checked> Hombre-->
+            <input type="radio" id="r1" class="radio" name="user[sexo]" checked value="hombre">
+
+            <label class="sexo"  for="r2" class="labelsexo">Mujer</label>
+            <!--<input type="radio" class="radio"  name="user[sexo]" value="mujer"> Mujer-->
+            <input type="radio" id="r2" class="radio" name="user[sexo]" value="mujer">
+    </div>          
     <input class="btn" type="submit" value="Registrarse">
+    
+</div>
 </div>

@@ -46,6 +46,15 @@ module.exports = function(sequelize, DataTypes) {
             peso: {
         type: DataTypes.STRING
       },
+      correo: {
+        type: DataTypes.STRING
+      },
+      sexo: {
+        type: DataTypes.STRING
+      },
+      edad: {
+        type: DataTypes.STRING
+      },
             image: {
         type: DataTypes.STRING
       }    

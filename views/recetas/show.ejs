@@ -1,9 +1,13 @@
 <section class="container">
+      <center>
+      <h1 class="titulo-recetario">Recetario E-nutrition</h1>
+      <h2 class="subtitulo-recetario">¡Disfruta de nuestras variadas y deliciosas recetas!</h2>
+      </center>
         
       <!-- RECETA GRANDE -->
  <% var i; for (i=0; i < receta.length; i++) {%> 
      <% if (i ==0) {%>
-    <article class= "main-reseta">   
+    <article class= "section-reseta">   
           <a href="/recetas/<%= receta[i].nombre %>">
                 <figure class="img-receta">
                 <% if (receta[i].image){%>
