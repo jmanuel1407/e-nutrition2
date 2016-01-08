@@ -29,6 +29,16 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 // Importar definicion de la tabla Quiz
 var fruta_path = path.join(__dirname,'fruta');
 var Fruta = sequelize.import(fruta_path);
+
+var verdura_path = path.join(__dirname,'verdura');
+var Verdura = sequelize.import(verdura_path);
+
+var planta_path = path.join(__dirname,'planta');
+var Planta = sequelize.import(planta_path);
+
+var cereal_path = path.join(__dirname,'cereal');
+var Cereal = sequelize.import(cereal_path);
+
 var receta_path = path.join(__dirname,'receta');
 var Receta = sequelize.import(receta_path);
 var control_path = path.join(__dirname,'control');
@@ -41,12 +51,23 @@ var User = sequelize.import(user_path);
 
 // los quizes pertenecen a un usuario registrado
 User.hasMany(Fruta);
+User.hasMany(Verdura);
+User.hasMany(Planta);
+User.hasMany(Cereal);
+
 Fruta.hasMany(Receta);
+Verdura.hasMany(Receta);
+Cereal.hasMany(Receta);
+Planta.hasMany(Receta);
 Control.belongsTo(User);
 User.hasMany(Control);
 
 // exportar tablas
 exports.Fruta = Fruta;
+exports.Verdura = Verdura;
+exports.Cereal = Cereal;
+exports.Planta = Planta;
+
 exports.Receta = Receta; 
 exports.Control = Control;
 exports.User = User;
@@ -62,11 +83,38 @@ sequelize.sync().then(function() {
           {username: 'pepe',   password: '5678', image:'usuario.jpeg'} // el valor por defecto de isAdmin es 'false'
         ]
       ).then(function(){
+        Verdura.count().then(function (count){
+          if(count === 0) {   // la tabla se inicializa solo si está vacía
+            Verdura.bulkCreate( 
+              [ {nombre: 'Chayote', FrutaId: 2},{nombre: 'Zanahoria', FrutaId: 3}
+              ]
+            ).then(function(){console.log('Base de datos (tabla Verdura) inicializada');});
+          };
+        });
+      }).then(function(){
+        Planta.count().then(function (count){
+          if(count === 0) {   // la tabla se inicializa solo si está vacía
+            Planta.bulkCreate( 
+              [ {nombre: 'Cilantro', FrutaId: 2},{nombre: 'Perejil', FrutaId: 3}
+              ]
+            ).then(function(){console.log('Base de datos (tabla Planta) inicializada');});
+          };
+        });
+      }).then(function(){
+        Cereal.count().then(function (count){
+          if(count === 0) {   // la tabla se inicializa solo si está vacía
+            Cereal.bulkCreate( 
+              [ {nombre: 'Trigo', FrutaId: 2}, {nombre: 'Linaza', FrutaId: 2},
+              ]
+            ).then(function(){console.log('Base de datos (tabla Cereal) inicializada');});
+          };
+        });
+      }).then(function(){
         console.log('Base de datos (tabla fruta) inicializada');
         Fruta.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Fruta.bulkCreate( 
-              [ {nombre: 'Plátano', FrutaId: 2},
+              [ {nombre: 'Plátano', FrutaId: 2},{nombre: 'Coco', FrutaId: 2}
               ]
             ).then(function(){console.log('Base de datos (tabla Fruta) inicializada');});
           };

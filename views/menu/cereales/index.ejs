@@ -1,0 +1,31 @@
+<div id="contenedor-cereales">
+  <h2 class="titulo-section">Cereales</h2>
+  <%if(session.user) { 
+    if(session.user.isAdmin){%>
+  <a class="btn-add" href="/cereales/new">Agregar Fruta</a>
+  <%}}%>
+  
+  <% var i; for (i=0; i < cereales.length; i++) {%> 
+  <article class="cereales">       
+    <a href="/cereales/<%= cereales[i].nombre %>"><figure>
+    <%if (cereales[i].image){%>
+        <img  src="/media/<%= cereales[i].image %>">
+    <%}else{%>
+    <img src="/images/cereal.png">
+    <% } %>
+    <figcaption><%= cereales[i].nombre %></figcaption></figure></a>
+      <%if (session.user && session.user.isAdmin){%>
+
+        <a class="btn" href="/cereales/<%= cereales[i].id %>/edit"><button>Editar</button></a>
+          <form method="post" action="/cereales/<%= cereales[i].id %>?_method=delete">
+            <button class="btn" type="submit" onClick="return confirm('Borrar: <%= cereales[i].nombre %>');">
+              Borrar
+            </button>
+          </form>
+        <%
+      }%>
+       </article>
+  <% } %>
+  
+
+</div>

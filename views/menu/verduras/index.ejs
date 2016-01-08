@@ -1,0 +1,31 @@
+<div id="contenedor-verduras">
+  <h2 class="titulo-section">verduras</h2>
+  <%if(session.user) { 
+    if(session.user.isAdmin){%>
+  <a class="btn-add" href="/verduras/new">Agregar verdura</a>
+  <%}}%>
+  
+  <% var i; for (i=0; i < verduras.length; i++) {%> 
+  <article class="verduras">       
+    <a href="/verduras/<%= verduras[i].nombre %>"><figure>
+    <%if (verduras[i].image){%>
+        <img  src="/media/<%= verduras[i].image %>">
+    <%}else{%>
+    <img src="/images/verduras.png">
+    <% } %>
+    <figcaption><%= verduras[i].nombre %></figcaption></figure></a>
+      <%if (session.user && session.user.isAdmin){%>
+
+        <a class="btn" href="/verduras/<%= verduras[i].id %>/edit"><button>Editar</button></a>
+          <form method="post" action="/verduras/<%= verduras[i].id %>?_method=delete">
+            <button class="btn" type="submit" onClick="return confirm('Borrar: <%= verduras[i].nombre %>');">
+              Borrar
+            </button>
+          </form>
+        <%
+      }%>
+       </article>
+  <% } %>
+  
+
+</div>

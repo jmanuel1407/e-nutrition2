@@ -1,0 +1,31 @@
+<div id="contenedor-plantas">
+  <h2 class="titulo-section">plantas</h2>
+  <%if(session.user) { 
+    if(session.user.isAdmin){%>
+  <a class="btn-add" href="/plantas/new">Agregar planta</a>
+  <%}}%>
+  
+  <% var i; for (i=0; i < plantas.length; i++) {%> 
+  <article class="plantas">       
+    <a href="/plantas/<%= plantas[i].nombre %>"><figure>
+    <%if (plantas[i].image){%>
+        <img  src="/media/<%= plantas[i].image %>">
+    <%}else{%>
+    <img src="/images/planta.png">
+    <% } %>
+    <figcaption><%= plantas[i].nombre %></figcaption></figure></a>
+      <%if (session.user && session.user.isAdmin){%>
+
+        <a class="btn" href="/plantas/<%= plantas[i].id %>/edit"><button>Editar</button></a>
+          <form method="post" action="/plantas/<%= plantas[i].id %>?_method=delete">
+            <button class="btn" type="submit" onClick="return confirm('Borrar: <%= plantas[i].nombre %>');">
+              Borrar
+            </button>
+          </form>
+        <%
+      }%>
+       </article>
+  <% } %>
+  
+
+</div>

@@ -11,7 +11,7 @@
     <%if (frutas[i].image){%>
         <img  src="/media/<%= frutas[i].image %>">
     <%}else{%>
-    <img src="/images/fruta.png">
+    <img src="/images/frutas.png">
     <% } %>
     <figcaption><%= frutas[i].nombre %></figcaption></figure></a>
       <%if (session.user && session.user.isAdmin){%>
