@@ -198,7 +198,7 @@ a{
 	width: 100%;
 }
 
-.main #formulario div,.main #formulario-ingresar div{
+.main #formulario #form-registro div,.main #formulario-ingresar div{
 	height: 40px;
 	margin-top:1%;
 	width: 100%;

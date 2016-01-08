@@ -48,10 +48,10 @@ router.get('/frutas/:ingrediente', recetasController.show);
 
 router.get('/plantas',                      plantasController.index);
 router.get('/plantas/new', 				   plantasController.new);
-router.get('/plantas/:plantaId(\\d+)/edit',   sessionController.loginRequired, plantasController.ownershipRequired, frutasController.edit);
-router.put('/plantas/:plantaId(\\d+)',        sessionController.loginRequired, plantasController.ownershipRequired, multer({ dest: './public/media/'}), frutasController.update);
-router.delete('/plantas/:plantaId(\\d+)',     sessionController.loginRequired, plantasController.ownershipRequired, frutasController.destroy);
-router.post('/plantas/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), frutasController.create);
+router.get('/plantas/:plantaId(\\d+)/edit',   sessionController.loginRequired, plantasController.ownershipRequired, plantasController.edit);
+router.put('/plantas/:plantaId(\\d+)',        sessionController.loginRequired, plantasController.ownershipRequired, multer({ dest: './public/media/'}), plantasController.update);
+router.delete('/plantas/:plantaId(\\d+)',     sessionController.loginRequired, plantasController.ownershipRequired, plantasController.destroy);
+router.post('/plantas/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), plantasController.create);
 router.get('/plantas/:ingrediente', recetasController.show);
 
 router.get('/cereales',                      cerealesController.index);
@@ -59,13 +59,13 @@ router.get('/cereales/new', 				   cerealesController.new);
 router.get('/cereales/:cerealId(\\d+)/edit',   sessionController.loginRequired, cerealesController.ownershipRequired,cerealesController.edit);
 router.put('/cereales/:cerealId(\\d+)',        sessionController.loginRequired, cerealesController.ownershipRequired, multer({ dest: './public/media/'}), cerealesController.update);
 router.delete('/cereales/:cerealId(\\d+)',     sessionController.loginRequired, cerealesController.ownershipRequired,cerealesController.destroy);
-router.post('/cereales/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), frutasController.create);
+router.post('/cereales/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), cerealesController.create);
 router.get('/cereales/:ingrediente', recetasController.show);
 
 router.get('/verduras',                      verdurasController.index);
 router.get('/verduras/new', 				   verdurasController.new);
 router.get('/verduras/:verduraId(\\d+)/edit',   sessionController.loginRequired,verdurasController.ownershipRequired, verdurasController.edit);
-router.put('/verduras/:verduraId(\\d+)',        sessionController.loginRequired, verdurasController.ownershipRequired, multer({ dest: './public/media/'}), frutasController.update);
+router.put('/verduras/:verduraId(\\d+)',        sessionController.loginRequired, verdurasController.ownershipRequired, multer({ dest: './public/media/'}), verdurasController.update);
 router.delete('/verduras/:verduraId(\\d+)',     sessionController.loginRequired, verdurasController.ownershipRequired, verdurasController.destroy);
 router.post('/verduras/create',              sessionController.loginRequired, multer({ dest: './public/media/'}), verdurasController.create);
 router.get('/verduras/:ingrediente', recetasController.show);

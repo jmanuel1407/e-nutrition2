@@ -15,6 +15,9 @@ exports.ownershipRequired = function(req, res, next){
 // Autoload :id
 exports.load = function(req, res, next, frutaId) {
   models.Fruta.find({
+            where: {
+                id: Number(frutaId)
+            },
             include: [{
                 model: models.Receta
             }]
@@ -114,8 +117,6 @@ exports.update = function(req, res) {
 
 // DELETE /quizes/:id
 exports.destroy = function(req, res) {
-  console.log("Entro a eliminar");
-   console.log(req.fruta);
   req.fruta.destroy().then( function() {
     res.redirect('/frutas');
   }).catch(function(error){next(error)});

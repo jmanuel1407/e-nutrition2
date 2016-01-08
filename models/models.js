@@ -86,7 +86,7 @@ sequelize.sync().then(function() {
         Verdura.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Verdura.bulkCreate( 
-              [ {nombre: 'Chayote', FrutaId: 2},{nombre: 'Zanahoria', FrutaId: 3}
+              [ {nombre: 'Chayote', VerduraId: 2}
               ]
             ).then(function(){console.log('Base de datos (tabla Verdura) inicializada');});
           };
@@ -95,7 +95,7 @@ sequelize.sync().then(function() {
         Planta.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Planta.bulkCreate( 
-              [ {nombre: 'Cilantro', FrutaId: 2},{nombre: 'Perejil', FrutaId: 3}
+              [ {nombre: 'Cilantro', PlantaId: 2},{nombre: 'Perejil', PlantaId: 3}
               ]
             ).then(function(){console.log('Base de datos (tabla Planta) inicializada');});
           };
@@ -104,7 +104,7 @@ sequelize.sync().then(function() {
         Cereal.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Cereal.bulkCreate( 
-              [ {nombre: 'Trigo', FrutaId: 2}, {nombre: 'Linaza', FrutaId: 2},
+              [ {nombre: 'Trigo', CerealId: 2}, {nombre: 'Linaza', CerealId: 3},
               ]
             ).then(function(){console.log('Base de datos (tabla Cereal) inicializada');});
           };
@@ -114,7 +114,7 @@ sequelize.sync().then(function() {
         Fruta.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Fruta.bulkCreate( 
-              [ {nombre: 'Plátano', FrutaId: 2},{nombre: 'Coco', FrutaId: 2}
+              [ {nombre: 'Plátano', FrutaId: 2},{nombre: 'Coco', FrutaId: 3}
               ]
             ).then(function(){console.log('Base de datos (tabla Fruta) inicializada');});
           };
@@ -124,8 +124,8 @@ sequelize.sync().then(function() {
         Receta.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Receta.bulkCreate( 
-              [ {nombre: 'Bowl de cereales y semillas', FrutaId: 2,intro:'Esta receta práctica para desayunar puedes llevarla contigo o dejarla preparada una noche antes. Disfruta los beneficios de los cereales y llénate de energía al comenzar el día. ', ingredientes:'Plátano 1/4 taza de quinoa enjuagada 1/2 taza de leche de almendras, 1 pizca de canela en polvo', preparacion:'Cocina la quinoa en una olla chica con la leche de almendras; deja a fuego medio hasta que absorba todo el liquido e infle. Una vez listo, apaga el fuego y agrega el resto de los ingredientes a la olla. Revuelve bien para integrar todos los sabores y sirve de inmediato. Decora con ralladura de naranja y limón. Comparte y disfruta.'},
-            {nombre: 'Bowl de cereales y semillas', FrutaId: 3,intro:'Esta receta práctica para desayunar puedes llevarla contigo o dejarla preparada una noche antes. Disfruta los beneficios de los cereales y llénate de energía al comenzar el día. ', ingredientes:'Plátano 1/4 taza de quinoa enjuagada 1/2 taza de leche de almendras, 1 pizca de canela en polvo', preparacion:'Cocina la quinoa en una olla chica con la leche de almendras; deja a fuego medio hasta que absorba todo el liquido e infle. Una vez listo, apaga el fuego y agrega el resto de los ingredientes a la olla. Revuelve bien para integrar todos los sabores y sirve de inmediato. Decora con ralladura de naranja y limón. Comparte y disfruta.'}]
+              [ {nombre: 'Bowl de cereales y semillas', RecetaId: 2,intro:'Esta receta práctica para desayunar puedes llevarla contigo o dejarla preparada una noche antes. Disfruta los beneficios de los cereales y llénate de energía al comenzar el día. ', ingredientes:'Plátano 1/4 taza de quinoa enjuagada 1/2 taza de leche de almendras, 1 pizca de canela en polvo', preparacion:'Cocina la quinoa en una olla chica con la leche de almendras; deja a fuego medio hasta que absorba todo el liquido e infle. Una vez listo, apaga el fuego y agrega el resto de los ingredientes a la olla. Revuelve bien para integrar todos los sabores y sirve de inmediato. Decora con ralladura de naranja y limón. Comparte y disfruta.'},
+            {nombre: 'Bowl de cereales y semillas', RecetaId: 3,intro:'Esta receta práctica para desayunar puedes llevarla contigo o dejarla preparada una noche antes. Disfruta los beneficios de los cereales y llénate de energía al comenzar el día. ', ingredientes:'Plátano 1/4 taza de quinoa enjuagada 1/2 taza de leche de almendras, 1 pizca de canela en polvo', preparacion:'Cocina la quinoa en una olla chica con la leche de almendras; deja a fuego medio hasta que absorba todo el liquido e infle. Una vez listo, apaga el fuego y agrega el resto de los ingredientes a la olla. Revuelve bien para integrar todos los sabores y sirve de inmediato. Decora con ralladura de naranja y limón. Comparte y disfruta.'}]
             ).then(function(){
               console.log('Base de datos (tabla Receta) inicializada');
               Control.count().then(function (count){

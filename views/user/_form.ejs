@@ -39,8 +39,9 @@
    jQuery('#botonGuardar').on('click', function(e) {
 	   	var canvas = document.getElementById("foto");
 		var dataUrl = canvas.toDataURL(); // obtenemos la imagen como png
-		dataUrl=dataUrl.replace("image/png",'image/octet-stream'); // sustituimos el tipo por octet
+		//dataUrl=dataUrl.replace("image/png",'image/octet-stream'); // sustituimos el tipo por octet
 		document.getElementById("img").value = dataUrl;
+
 	});
         //Pedimos al navegador que nos da acceso a 
         //algún dispositivo de video (la webcam)

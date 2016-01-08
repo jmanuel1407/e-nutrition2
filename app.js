@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override');
 var partials = require('express-partials');
 var session = require('express-session');
 
@@ -24,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser('e-nutrition2015')); //Para cifrar cookie
 app.use(session());
+
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/app.cache', function (req, res) {

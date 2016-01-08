@@ -65,7 +65,7 @@ exports.new = function(req, res) {
     var user = models.User.build( // crea objeto user 
         {username: "User", password: "Password"}
     );
-    res.render('user/new', {user: user, errors: []});
+    res.render('user/formulario', {user: user, errors: []});
 };
 
 // POST /user
