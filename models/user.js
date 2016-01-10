@@ -55,6 +55,9 @@ module.exports = function(sequelize, DataTypes) {
       edad: {
         type: DataTypes.STRING
       },
+      altura: {
+        type: DataTypes.STRING
+      },
             image: {
         type: DataTypes.STRING
       }    

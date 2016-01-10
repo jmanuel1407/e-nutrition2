@@ -9,6 +9,11 @@ images/logoM.jpg
 images/logoMM.jpg
 images/logoH.jpg
 images/logoHH.jpg
+images/logo.png
+images/verduras.png
+images/frutas.png
+images/cereal.png
+images/planta.png
 images/bg.png
 js/modernizr.min.js
 js/jquery.min.js
@@ -19,6 +24,9 @@ fonts/icomoon/selection.json
 fonts/icomoon/style.css
 fonts/icomoon/fonts/icomoon.ttf?-j6emu2
 fonts/icomoon/fonts/icomoon.woff?-j6emu2
+
+
+
 
 NETWORK:
 cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css

@@ -49,11 +49,13 @@ var Control = sequelize.import(control_path);
 var user_path = path.join(__dirname,'user');
 var User = sequelize.import(user_path);
 
+
 // los quizes pertenecen a un usuario registrado
 User.hasMany(Fruta);
 User.hasMany(Verdura);
 User.hasMany(Planta);
 User.hasMany(Cereal);
+
 
 Fruta.hasMany(Receta);
 Verdura.hasMany(Receta);
@@ -131,7 +133,7 @@ sequelize.sync().then(function() {
               Control.count().then(function (count){
           if(count === 0) {   // la tabla se inicializa solo si está vacía
             Control.bulkCreate( 
-              [ {fecha: '15-09-2015', controlId: 2, peso: 0},
+              [ {fecha: '15-09-2015', controlId: 1, peso: 80, UserId:2, altura:1.70},{fecha: '15-09-2015', controlId: 1, peso: 83,altura:69, UserId:1}
               ]
             ).then(function(){console.log('Base de datos (tabla Control) inicializada');});
           };

@@ -1,35 +1,74 @@
 <section id= "section-perfil">
     <article id="article-datos" >
-        <h1> <%=session.user.username%> </h1> 
+       
         <figure>
-            <img src="">
+         <%if (session.user.image){ console.log(session.user.image)%>
+        
+        <img src= "/images/<%=session.user.image%>" alt="Perfil">
+    <%}else{%>
+     <img src= "/images/<%=session.user.image%>" alt="Perfil">
+    <% } %>
+
+           
             <figcaption><a class="btn-editar" href="/user/<%=session.user.id%>/edit"><button>Editar</button></a></figcaption>
         </figure>
+         <h1> <%=session.user.username%></h1> 
     </article>
     <article id="article-tabla" >
+    <div class="col-sm-3">
+            <a href="#" id="delete-all-btn" class="btn-xs"><i class="fa fa-trash-o"></i> Borrar todo</a>
+            
+                
+        </div>
         <table>
             <tr>
                 <th>Fecha</th>
                 <th>Peso</th>
-                <th>Altura</th>
             </tr>
-        </table>
+            <% var i; for (i=0; i < controles.length; i++) {%> 
+            <% if (controles[i].UserId == session.user.id){%>
+                <tr>
+                    <td><%=controles[i].fecha%></td>
+                    <td><%=controles[i].peso%></td>
+                </tr>
+            <% }}%> 
+            <tr id="list-container">
+                <td id="th-fecha"></td>
+                <td id="th-peso"></td>
+            </tr>
+        </table> 
     </article>
-    <article = "article-registro">
-        <header>
-             <h1> Registrar </h1> 
-        </header>
-        <form>
-            <div>
+    <article id= "article-registro">
+        <div class="contenido">
+            <header>
+                 <h1> Registrar </h1> 
+            </header>
+            <form >
+                <div>
+                <input type="hidden" id="id-hidden" />
                 <label class="rem">Fecha: </label>
-                <input id="title-text" type="date" class="form-control" tabindex="1" placeholder="Fecha" autofocus />
+                <input name="control[fecha]"id="title-text" type="date" class="form-control" tabindex="1" placeholder="Fecha" autofocus />
             </div>
             <div>
                  <label class="rem">Peso: </label>
-                 <textarea id="notes-text" class="form-control" tabindex="2" placeholder="Peso"></textarea>
+                 <textarea name="control[peso]" id="notes-text" class="form-control" tabindex="2" placeholder="Peso"></textarea>
            
             </div>
-           
-        </form>
+               <div class="pull-right push-down">
+                <button  id="clear-button" tabindex="4">Borrar</button>
+                <button id="save-button" tabindex="3" class="btn btn-default btn-primary"> 
+                     Guardar 
+                </button>
+            </div>
+           <div>
+
+        </form >
+         <script id="note-template" type="text/template">
+           // <i data-id="{ID}" class="fa fa-minus-circle"></i>
+            <th data-id="{ID}">{TITLE}</th>
+           </script>
+    <script id="empty-note" type="text/template">
+        <li class="text-muted small">Sin Notas de control</li>
+    </script>
     </article>
 </section>

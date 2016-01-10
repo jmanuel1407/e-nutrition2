@@ -1,3 +1,4 @@
+var models = require('../models/models.js');
 // MW de autorización de accesos HTTP restringidos
 exports.loginRequired = function(req, res, next){
     if (req.session.user) {
@@ -44,7 +45,22 @@ exports.destroy = function(req, res) {
     res.redirect(req.session.redir.toString()); // redirect a path anterior a login
 };
 exports.perfil = function(req, res){
-    res.render('sesion/perfil');
+    var options = {};
+    console.log("usuario");
+    console.log(req.user);
+  if(req.user){
+    options.where = {UserId: req.user.id}
+  }
+   console.log("option");
+  console.log(options);
+  models.Control.findAll().then(
+    function(controles) {
+         console.log("controles");
+        console.log(controles);
+      res.render('sesion/perfil', {controles: controles, errors: []});
+    }
+  ).catch(function(error){next(error)});
+
 };
 
 exports.notas = function(req, res){

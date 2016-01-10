@@ -6,6 +6,7 @@ var frutasController = require('../controllers/frutas_controller');
 var verdurasController = require('../controllers/verduras_controller');
 var cerealesController = require('../controllers/cereales_controller');
 var plantasController = require('../controllers/plantas_controller');
+var controlController = require('../controllers/control_controller');
 
 var recetasController = require('../controllers/recetas_controller');
 
@@ -24,7 +25,7 @@ router.param('cerealesId', cerealesController.load);  // autoload :frutaId
 router.param('plantasId', plantasController.load);  // autoload :frutaId
 router.param('recetaId', recetasController.load);  // autoload :frutaId
 router.param('userId', userController.load);  // autoload :userId
-
+router.param('controlId', controlController.load);  // autoload :userId
 // Definición de rutas de sesion
 router.get('/login',  sessionController.new);     // formulario login
 router.post('/login', sessionController.create);  // crear sesión
@@ -38,6 +39,8 @@ router.put('/user/:userId(\\d+)',  sessionController.loginRequired, userControll
 router.delete('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.destroy);     // borrar cuenta
 
 // Definición de rutas de /quizes
+router.post('/control/save',      sessionController.loginRequired,controlController.save);
+
 router.get('/frutas',                      frutasController.index);
 router.get('/frutas/new', 				   frutasController.new);
 router.get('/frutas/:frutaId(\\d+)/edit',   sessionController.loginRequired, frutasController.ownershipRequired, frutasController.edit);

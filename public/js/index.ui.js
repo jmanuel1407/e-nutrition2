@@ -17,18 +17,19 @@
           $idHidden = $('#id-hidden'),
           $clearButton = $('#clear-button'),
           $saveButton = $('#save-button'),
-          $listContainer = $('#list-container'),
+          $thfecha = $('#th-fecha'),
+          $thpeso = $('#th-peso'),
           $noteTemplate = $('#note-template'),
           $emptyNote = $('#empty-note');
         
         var addNoTasksMessage = function(){
-            $listContainer.append(
+            $thfecha.append(
                 $emptyNote.html());
         };
         
         var bindData = function (data) {
       
-            $listContainer.html('');
+            $thfecha.html('');
             
             if(data.length === 0){
                 addNoTasksMessage();
@@ -37,9 +38,12 @@
             
             data.forEach(function (note) {
               var m = $noteTemplate.html();
+              var y = $noteTemplate.html();
               m = m.replace(/{ID}/g, note.id);
-              m = m.replace(/{TITLE}/g, note.title);
-              $listContainer.append(m);
+              m = m.replace(/{TITLE}/g, note.fecha);
+              y = y.replace(/{TITLE}/g, note.peso);
+              $thfecha.append(m);
+              $thpeso.append(y);
             });
         };
         
@@ -50,7 +54,7 @@
         };
         
         // select individual item
-        $listContainer.on('click', 'a[data-id]',
+        $thfecha.on('click', 'a[data-id]',
       
             function (e) {
       
@@ -71,7 +75,7 @@
             });
       
         // delete item
-        $listContainer.on('click', 'i[data-id]',
+        $thfecha.on('click', 'i[data-id]',
       
             function (e) {
       
@@ -105,8 +109,8 @@
             }
       
             var note = {
-                title: title,
-                text: $notesText.val()
+                fecha: title,
+                peso: $notesText.val()
             };
       
             var id = $idHidden.val();
@@ -126,7 +130,7 @@
             e.preventDefault();
       
             app.db.deleteAll(function () {
-                $listContainer.html('');
+                $thfecha.html('');
                 addNoTasksMessage();
                 clearUI();
             });
